@@ -5,5 +5,14 @@ Metaphone kabi algoritmlarlar o'zbek tilidagi so'zlar uchun to'g'ri kod berolmay
 Ushbu kod tajriba sifatida o'zbek tilidagi harflarni hisobga olgan holda mos kod hosil qilish uchun urinishdir.
 
 Masalan: Metaphone orqali "Poytaxt" va "Poytaht" so'zlariga ikki hil, bir-biridan farq qiluvchi kod beriladi.
-Vaholanki o'zbek tilida ikki so'zning o'qilishi deyarli bir hil.
+```
+metaphone("Poytaxt") = "PTKST"
+metaphone("Poytaht") = "PTT"
+```
+Vaholanki o'zbek tilida ikki so'zning o'zbek tilida o'qilishi deyarli bir hil.
 
+Mani o'zgartirilgan variantimda
+```
+encode("Poytaxt") = "PYTXT"
+encode("Poytaht") = "PYTXT"
+```
