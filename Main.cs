@@ -1,6 +1,11 @@
 ﻿using System.Text;
 
 
+bool IsVowel(char c)
+{
+    return "AUOIE".Contains(c);
+}
+
 string Encode(string word)
 {
     string s = word.ToUpper();
@@ -14,7 +19,8 @@ string Encode(string word)
     {
         char c = s[pos];
         char next = pos < len - 1 ? s[pos + 1] : char.MinValue;
-        
+        char nextnext = pos < len - 2 ? s[pos + 2] : char.MinValue;
+
         switch (c)
         {
            
@@ -92,9 +98,13 @@ string Encode(string word)
 
             case 'B':
             case 'P':
+                result.Append("P");
+                if (next == c) pos++;
+                break;
+
             case 'F':
             case 'V':
-                result.Append("P");
+                result.Append("F");
                 if (next == c) pos++;
                 break;
 
@@ -122,7 +132,10 @@ string Encode(string word)
             case 'H':
             case 'X':
                 result.Append("X");
-                if (next == c) pos++;
+                if (next == 'T' && !IsVowel(nextnext))
+                    pos++;
+                else if (next == c) 
+                    pos++;
                 break;
 
             case 'J':
@@ -189,6 +202,11 @@ string Encode(string word)
 
             case 'Z':
                 result.Append("S");
+                if (next == c) pos++;
+                break;
+
+            case ' ':
+                result.Append(" ");
                 if (next == c) pos++;
                 break;
 
