@@ -13,6 +13,6 @@ Vaholanki o'zbek tilida ikki so'zning o'zbek tilida o'qilishi deyarli bir hil.
 
 O'zgartirilgan variantda
 ```
-encode("Poytaxt") = "PYTXT"
-encode("Poytaht") = "PYTXT"
+encode("Poytaxt") = "PYTX"
+encode("Poytaht") = "PYTX"
 ```
